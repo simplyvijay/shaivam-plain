@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap location (update domain when live)
+Sitemap: https://shaivam.info/sitemap.xml
+
+# Disallow admin or private paths (none currently)
+# Disallow: /private/

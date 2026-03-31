@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "shaivam-8bd79-30558",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

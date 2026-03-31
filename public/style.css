@@ -505,7 +505,18 @@ h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
   opacity: 0.55;
 }
 
-/* ===== WISDOM CAROUSEL ===== */
+/* ===== SUBMIT BUTTON SPINNER ===== */
+.submit-spinner { display: none; width: 1rem; height: 1rem; vertical-align: middle; }
+[data-fs-submit-btn]:disabled .submit-spinner { display: inline-block; }
+[data-fs-submit-btn]:disabled .submit-icon  { display: none; }
+[data-fs-submit-btn]:disabled { opacity: 0.82; cursor: wait; }
+
+/* ===== PRIVACY POLICY PAGE ===== */
+.privacy-content h2 { font-size: 1.3rem; color: var(--neutral-dark); margin: 2rem 0 0.6rem; }
+.privacy-content h3 { font-size: 1.05rem; color: var(--primary); margin: 1.25rem 0 0.4rem; }
+.privacy-content p, .privacy-content li { color: var(--text-muted); line-height: 1.8; font-size: 0.95rem; }
+.privacy-content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+.privacy-content .privacy-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(211,84,0,0.08); color: var(--primary); border-radius: 8px; padding: 0.75rem 1.25rem; font-size: 0.9rem; font-weight: 600; margin-bottom: 2rem; }
 .wisdom-carousel {
   min-height: 7rem;
   display: flex;

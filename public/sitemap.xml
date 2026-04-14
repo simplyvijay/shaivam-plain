@@ -18,6 +18,13 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Temples -->
+  <url>
+    <loc>https://shaivam.info/temples.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Videos -->
   <url>
     <loc>https://shaivam.info/videos.html</loc>

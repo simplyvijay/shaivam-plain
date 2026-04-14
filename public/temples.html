@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sacred Temples of Shaivam — Seven revered shrines and their philosophical representations in South Indian Shaivite tradition. Explore the Pancha Bhuta Stalas and the cosmic significance of each sacred space.">
+  <meta name="keywords" content="Shaivam temples, Pancha Bhuta Stalas, Visweswaram, Jambukeshwaram, Brihadeshwaram, Arunachaleshwaram, Sudareshwaram, Kapaleeshwaram, Viswesa, Kanchipuram, Shaivite philosophy, sacred temples India">
+  <meta name="author" content="Shaivam Philosophy">
+  <meta name="robots" content="index, follow">
+  <title>Sacred Temples | Shaivam Philosophy</title>
+  <link rel="canonical" href="https://shaivam.info/temples.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sacred Temples of Shaivam | Seven Shrines and Their Philosophy">
+  <meta property="og:description" content="Seven revered Shaivite temples and their philosophical representations — from the Jyotirlinga of Varanasi to the earth-shrines of Kanchipuram.">
+  <meta property="og:url" content="https://shaivam.info/temples.html">
+  <meta property="og:site_name" content="Shaivam Philosophy">
+  <meta property="og:image" content="https://shaivam.info/images/gopuram.jpg">
+  <meta property="og:locale" content="en_US">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sacred Temples of Shaivam | Seven Shrines">
+  <meta name="twitter:description" content="Explore the philosophical significance of seven sacred Shaivite temples across South India.">
+  <meta name="twitter:image" content="https://shaivam.info/images/gopuram.jpg">
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Sacred Temples of Shaivam","url":"https://shaivam.info/temples.html","description":"Seven revered Shaivite temples and their philosophical representations in Shaivam tradition.","isPartOf":{"@type":"WebSite","name":"Shaivam Philosophy","url":"https://shaivam.info"}}</script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== TEMPLES PAGE SPECIFIC STYLES ===== */
+    .temple-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      background-color: var(--primary);
+      color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .temple-element-badge {
+      display: inline-block;
+      background-color: rgba(211, 84, 0, 0.08);
+      border: 1px solid rgba(211, 84, 0, 0.25);
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.85rem;
+      border-radius: 30px;
+      margin-bottom: 0.75rem;
+    }
+
+    .temple-img-wrap {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.15);
+      position: relative;
+    }
+
+    .temple-img-wrap img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .temple-img-wrap:hover img { transform: scale(1.04); }
+
+    .temple-location {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .temple-location i { color: var(--primary); font-size: 0.75rem; }
+
+    .temple-quote {
+      border-left: 4px solid var(--primary);
+      padding: 1.25rem 1.5rem;
+      background-color: rgba(211, 84, 0, 0.04);
+      border-radius: 0 8px 8px 0;
+      margin-top: 1.75rem;
+    }
+
+    .temple-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.18rem;
+      font-style: italic;
+      color: var(--neutral-dark);
+      margin: 0;
+      line-height: 1.65;
+    }
+
+    .temple-quote cite {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 0.6rem;
+    }
+
+    .temple-section { padding: 5.5rem 0; }
+    .temple-section-alt { background-color: var(--surface-offwhite); }
+
+    .temples-intro-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .temple-nav-card {
+      background-color: var(--surface-white);
+      border: 1px solid var(--neutral-light);
+      border-radius: 8px;
+      padding: 1.1rem 0.9rem;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    .temple-nav-card:hover {
+      border-color: var(--primary);
+      background-color: rgba(211, 84, 0, 0.04);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .temple-nav-card .t-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+      display: block;
+    }
+
+    .temple-nav-card .t-name {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-main);
+      display: block;
+      margin-top: 0.35rem;
+    }
+
+    .closing-section {
+      background: linear-gradient(135deg, var(--neutral-dark) 0%, #3d1a00 100%);
+      padding: 5.5rem 0;
+      text-align: center;
+    }
+
+    .closing-section h2 { color: var(--secondary); }
+    .closing-section p { color: rgba(250, 249, 246, 0.78); max-width: 680px; margin: 0 auto 1.5rem; }
+
+    @media (max-width: 767px) {
+      .temple-img-wrap img { height: 280px; }
+      .temple-section { padding: 3.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top" data-testid="main-navbar">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" data-testid="navbar-brand">
+      <img src="images/logo.png" alt="Shaivam Logo" style="height:44px;width:44px;object-fit:cover;border-radius:7px;">
+      <span>Shaivam</span>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation" data-testid="navbar-toggler">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html" data-page="index.html" data-testid="home-nav-link">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html" data-page="about.html" data-testid="about-nav-link">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="temples.html" data-page="temples.html" data-testid="temples-nav-link">Temples</a></li>
+        <li class="nav-item"><a class="nav-link" href="videos.html" data-page="videos.html" data-testid="videos-nav-link">Videos</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html" data-page="blog.html" data-testid="blog-nav-link">Blog</a></li>
+        <li class="nav-item ms-lg-2"><a class="btn btn-saffron btn-sm" href="contact.html" data-testid="contact-nav-btn">Connect</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header" data-testid="temples-page-header">
+  <div class="container">
+    <span class="section-tag" style="color:rgba(211,84,0,0.85);">Sacred Spaces</span>
+    <h1 class="mt-2">Temples of Shaivam</h1>
+    <p class="page-subtitle">Seven luminous shrines — each a doorway into a distinct facet of the divine, each a teaching made of stone, water, fire, and devotion</p>
+  </div>
+</section>
+
+<!-- INTRODUCTION -->
+<section class="section-padding" data-testid="temples-intro-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <span class="section-tag">Philosophical Significance</span>
+        <h2 class="mt-2">Why Temples Matter in Shaivam</h2>
+        <div class="section-divider"></div>
+        <p>In Shaivam philosophy, a temple is not merely a building of worship. It is a <em>cosmogram</em> — an ordered map of the universe rendered in stone, each element of its architecture corresponding to a dimension of consciousness. The <span class="sanskrit">gopuram</span> (gateway tower) represents the mind's passage from the mundane to the sacred. The sanctum's darkness represents the formless source. The image within is consciousness itself, taking form so that the unformed mind may approach it.</p>
+        <p>Seven sacred temples stand as the most concentrated expressions of Shaivam's philosophical principles. Five of them belong to the <span class="sanskrit">Pancha Bhuta Stalas</span> — the five shrines each consecrated to one of the primordial elements (space, water, fire, earth, and air). Together, these seven spaces guide the seeker from cosmic formlessness to earthly groundedness, from dissolution to creation, from fire to water, from achievement to devotion.</p>
+        <p>Each temple presented here is not just a geographical location but a philosophical station on the inner journey. Visit them with your mind first — the outer pilgrimage always begins within.</p>
+      </div>
+    </div>
+
+    <!-- Temple navigation quick-links -->
+    <div class="row justify-content-center mt-4">
+      <div class="col-lg-10">
+        <div class="temples-intro-grid" data-testid="temples-quicknav">
+          <a href="#visweswaram" class="temple-nav-card" data-testid="temple-nav-1">
+            <span class="t-num">01</span>
+            <span class="t-name">Visweswaram</span>
+          </a>
+          <a href="#jambukeshwaram" class="temple-nav-card" data-testid="temple-nav-2">
+            <span class="t-num">02</span>
+            <span class="t-name">Jambukeshwaram</span>
+          </a>
+          <a href="#brihadeshwaram" class="temple-nav-card" data-testid="temple-nav-3">
+            <span class="t-num">03</span>
+            <span class="t-name">Brihadeshwaram</span>
+          </a>
+          <a href="#arunachaleshwaram" class="temple-nav-card" data-testid="temple-nav-4">
+            <span class="t-num">04</span>
+            <span class="t-name">Arunachaleshwaram</span>
+          </a>
+          <a href="#sudareshwaram" class="temple-nav-card" data-testid="temple-nav-5">
+            <span class="t-num">05</span>
+            <span class="t-name">Sudareshwaram</span>
+          </a>
+          <a href="#kapaleeshwaram" class="temple-nav-card" data-testid="temple-nav-6">
+            <span class="t-num">06</span>
+            <span class="t-name">Kapaleeshwaram</span>
+          </a>
+          <a href="#viswesa" class="temple-nav-card" data-testid="temple-nav-7">
+            <span class="t-num">07</span>
+            <span class="t-name">Viswesa</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEMPLE 1: VISWESWARAM ===== -->
+<section id="visweswaram" class="temple-section temple-section-alt fade-up" data-testid="temple-visweswaram">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <div class="temple-img-wrap" data-testid="visweswaram-image">
+          <img src="images/temple-varanasi.jpg" alt="Kashi Vishwanath Temple, Varanasi — the Jyotirlinga of universal consciousness" loading="lazy">
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="temple-number" data-testid="temple-number-1">01</div>
+        <div class="temple-element-badge"><i class="fa-solid fa-circle-dot me-1"></i> Akasha — Space / The Primal Light</div>
+        <p class="temple-location"><i class="fa-solid fa-location-dot"></i> Varanasi (Kashi), Uttar Pradesh</p>
+        <h2 class="mt-1" style="font-size:clamp(1.8rem,3.5vw,2.6rem);">Visweswaram</h2>
+        <div class="section-divider-left"></div>
+
+        <p>Kashi Vishwanath — Visweswaram, the Lord of the Universe — stands at the very edge of time and form. One of the twelve sacred <span class="sanskrit">Jyotirlingas</span>, this shrine in Varanasi represents Shiva not as a deity with attributes but as pure, self-luminous consciousness: the light that illumines all things without itself being lit by anything else.</p>
+
+        <p>Varanasi (Kashi) holds a singular place in Shaivam philosophy. It is said that Shiva himself whispers the <span class="sanskrit">Taraka Mantra</span> — the mantra of liberation — into the ears of every being who dies within the city's sacred boundaries, cutting the cycle of rebirth at its root. This reflects a profound philosophical principle: liberation is not earned through effort alone but is ultimately an act of grace, available to all who are present with open awareness.</p>
+
+        <p>The element associated with Visweswaram is <span class="sanskrit">Akasha</span> — space, the subtlest of the five elements and the medium through which all sound, thought, and consciousness travel. Space does not resist anything. It contains everything without being diminished or defined by it. This is the first teaching of Shaivam: the ground of being is boundless, untouched, and ever present — regardless of what arises within it.</p>
+
+        <div class="temple-quote" data-testid="visweswaram-quote">
+          <p>"Before creation, between creations, and beyond all creation — Consciousness alone remains. Kashi is that Consciousness wearing the city as its body."</p>
+          <cite>— The Kashi Khandam, Skanda Purana</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEMPLE 2: JAMBUKESHWARAM ===== -->
+<section id="jambukeshwaram" class="temple-section fade-up" data-testid="temple-jambukeshwaram">
+  <div class="container">
+    <div class="row align-items-center g-5 flex-lg-row-reverse">
+      <div class="col-lg-5">
+        <div class="temple-img-wrap" data-testid="jambukeshwaram-image">
+          <img src="images/temple-architecture.jpg" alt="Jambukeshwaram Temple, Thiruvanaikaval — the water shrine of the Pancha Bhuta Stalas" loading="lazy">
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="temple-number" data-testid="temple-number-2">02</div>
+        <div class="temple-element-badge"><i class="fa-solid fa-droplet me-1"></i> Apah — Water / The Yielding Principle</div>
+        <p class="temple-location"><i class="fa-solid fa-location-dot"></i> Thiruvanaikaval, Tiruchirappalli, Tamil Nadu</p>
+        <h2 class="mt-1" style="font-size:clamp(1.8rem,3.5vw,2.6rem);">Jambukeshwaram</h2>
+        <div class="section-divider-left"></div>
+
+        <p>Within the great compound of Thiruvanaikaval rises the Jambukeshwaram temple — home to one of the five <span class="sanskrit">Pancha Bhuta Stalas</span>, the elemental shrines sacred to Shaivam. Here, the presiding linga rests partially submerged within a natural underground spring, and the element is <span class="sanskrit">Apah</span> — water, the principle of fluidity, nourishment, and yielding intelligence.</p>
+
+        <p>What makes Jambukeshwaram philosophically radical is the equal prominence of the goddess <span class="sanskrit">Akilandeswari</span> — She Who Rules the Universe — beside the Shiva linga. According to Shaivam tradition, it was Parvati herself who came to Jambukeshwaram in penance, fashioning a linga from the river clay and meditating beside it. The Divine Feminine is not subordinate here; she is the one who initiates, who seeks, who practices. The teaching is clear: the path of philosophy is not the domain of one gender, one caste, or one calling — it belongs to the sincere.</p>
+
+        <p>Water, in Shaivam philosophy, is the model of wisdom in action. It flows around every obstacle without surrendering its nature. It takes the exact shape of whatever contains it — and yet it remains, fundamentally and unchangeably, water. The seeker who embodies <span class="sanskrit">Apah</span> adapts to every circumstance, every relationship, and every phase of life without losing the essential thread of awareness that runs through all of it.</p>
+
+        <div class="temple-quote" data-testid="jambukeshwaram-quote">
+          <p>"The deepest wisdom does not insist on its own form. Like water, it finds its level — and in finding its level, it finds everything."</p>
+          <cite>— Shaivite Philosophical Tradition</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEMPLE 3: BRIHADESHWARAM ===== -->
+<section id="brihadeshwaram" class="temple-section temple-section-alt fade-up" data-testid="temple-brihadeshwaram">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <div class="temple-img-wrap" data-testid="brihadeshwaram-image">
+          <img src="images/temple-thanjavur.jpg" alt="Brihadeshwaram Temple, Thanjavur — the great Chola monument of human achievement dedicated to Shiva" loading="lazy">
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="temple-number" data-testid="temple-number-3">03</div>
+        <div class="temple-element-badge"><i class="fa-solid fa-mountain-sun me-1"></i> Human Achievement as Divine Offering</div>
+        <p class="temple-location"><i class="fa-solid fa-location-dot"></i> Thanjavur, Tamil Nadu</p>
+        <h2 class="mt-1" style="font-size:clamp(1.8rem,3.5vw,2.6rem);">Brihadeshwaram</h2>
+        <div class="section-divider-left"></div>
+
+        <p>Built in 1010 CE by the great Chola emperor <span class="sanskrit">Raja Raja I</span>, Brihadeshwaram — the Temple of the Great Lord — stands as perhaps the most complete expression of the Shaivam <span class="sanskrit">Goal Achievement Cycle</span> made visible in stone. Its <span class="sanskrit">vimana</span> (tower) soars to 66 metres, the tallest in the world at the time of its construction — an act of architectural daring that had never been attempted before and would not be surpassed for centuries.</p>
+
+        <p>Every proportion of Brihadeshwaram was calculated according to the <span class="sanskrit">Agama Shastra</span> — the sacred texts of temple science. The shadow of its tower, it is said, never falls upon the ground, pointing skyward perpetually as if to say: the aspiration of a life fully devoted does not cast a shadow of incompleteness. It reaches. It rises. It is its own justification.</p>
+
+        <p>This temple embodies the teaching that the highest expression of the <span class="sanskrit">Eshwara Janmam</span> — the phase of creation and worldly manifestation — is the complete offering of one's gifts to the divine. Raja Raja did not build Brihadeshwaram to glorify himself. He built it because he understood that the greatest thing a human being can do with their talents, wealth, and vision is to lay them at the feet of something larger than the self. In this, the act of building becomes the act of surrender.</p>
+
+        <div class="temple-quote" data-testid="brihadeshwaram-quote">
+          <p>"The greatest monument is not what you build — it is the quality of consciousness you bring to the building. Every stone placed in love becomes a prayer."</p>
+          <cite>— Shaivam Philosophy on Purposeful Action</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEMPLE 4: ARUNACHALESHWARAM ===== -->
+<section id="arunachaleshwaram" class="temple-section fade-up" data-testid="temple-arunachaleshwaram">
+  <div class="container">
+    <div class="row align-items-center g-5 flex-lg-row-reverse">
+      <div class="col-lg-5">
+        <div class="temple-img-wrap" data-testid="arunachaleshwaram-image">
+          <img src="images/temple-arunachala.jpg" alt="Arunachaleshwaram Temple, Tiruvannamalai — the sacred fire of consciousness" loading="lazy">
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="temple-number" data-testid="temple-number-4">04</div>
+        <div class="temple-element-badge"><i class="fa-solid fa-fire me-1"></i> Agni — Fire / The Burning of Illusion</div>
+        <p class="temple-location"><i class="fa-solid fa-location-dot"></i> Tiruvannamalai, Tamil Nadu</p>
+        <h2 class="mt-1" style="font-size:clamp(1.8rem,3.5vw,2.6rem);">Arunachaleshwaram</h2>
+        <div class="section-divider-left"></div>
+
+        <p>The Arunachala hill at Tiruvannamalai is not the backdrop to the Arunachaleshwaram temple — it is the temple. Shaivam tradition holds that Arunachala is Shiva himself, standing in the form of a mountain of fire (<span class="sanskrit">Agni</span>), the red hill whose name means "the dawn of wisdom." This is the fire <span class="sanskrit">Pancha Bhuta Stala</span>, and its teaching is the most demanding: the self that you believe yourself to be must be offered to the flame.</p>
+
+        <p>It was at the feet of Arunachala that the sage Ramana Maharishi arrived at age sixteen and never left. He declared the mountain his guru — not metaphorically but literally. For 54 years he lived in its presence, teaching the one question that could dissolve all other questions: <em>"Who am I?"</em> This practice of <span class="sanskrit">Atma Vichara</span> — self-inquiry — is the fire of Arunachala internalized. It does not accumulate knowledge; it burns away everything that is not knowledge.</p>
+
+        <p>Every year during the festival of <span class="sanskrit">Karthigai Deepam</span>, a great beacon of fire is lit at the summit of the hill, visible for miles across the Tamil plains. For one night, the hill is the sun. This is the Shaivam teaching made luminous: each human life, at its pinnacle of sincerity and self-knowledge, becomes a light that others can see their way by, not through instruction, but through the sheer clarity of a life lived in undeceived awareness.</p>
+
+        <div class="temple-quote" data-testid="arunachaleshwaram-quote">
+          <p>"The hill does not seek enlightenment — it IS enlightenment. What you have been seeking with such effort has always been the one doing the seeking."</p>
+          <cite>— Ramana Maharishi on Arunachala</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEMPLE 5: SUDARESHWARAM ===== -->
+<section id="sudareshwaram" class="temple-section temple-section-alt fade-up" data-testid="temple-sudareshwaram">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <div class="temple-img-wrap" data-testid="sudareshwaram-image">
+          <img src="images/subramaniam-meenakshi.jpg" alt="Meenakshi Amman Temple, Madurai — Sundareshwara, the Beautiful Lord" loading="lazy">
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="temple-number" data-testid="temple-number-5">05</div>
+        <div class="temple-element-badge"><i class="fa-solid fa-heart me-1"></i> Bhakti — Devotion / The Beautiful Lord</div>
+        <p class="temple-location"><i class="fa-solid fa-location-dot"></i> Madurai, Tamil Nadu</p>
+        <h2 class="mt-1" style="font-size:clamp(1.8rem,3.5vw,2.6rem);">Sudareshwaram</h2>
+        <div class="section-divider-left"></div>
+
+        <p><span class="sanskrit">Sundareshwara</span> — the Beautiful One, the Lord of Beauty — is Shiva in his most intimate and beloved form: the divine bridegroom who descends to wed <span class="sanskrit">Meenakshi</span> (Parvati) in the sacred city of Madurai. In the vast Meenakshi Amman temple complex, the presiding deity is not only Shiva but Meenakshi herself — the fish-eyed goddess who conquered the world through her fierce, unstoppable grace. Shiva is here in his most radiant, most accessible aspect.</p>
+
+        <p>The theological significance of Sudareshwaram is the recognition that the divine is not cold, distant, or philosophical in any abstract sense — it is beautiful. It desires. It chooses union. In Shaivam tradition, the cosmic marriage of Sundareshwara and Meenakshi is not a metaphor for something else; it is the thing itself. Love — at its most complete, most devoted, most unconditional — is a direct experience of the divine. The path of <span class="sanskrit">Bhakti</span> here is not subordinate to wisdom or action; it is their consummation.</p>
+
+        <p>The <span class="sanskrit">Ayiramkaal Mandapam</span> (Hall of a Thousand Pillars) at Madurai is one of the most extraordinary achievements of South Indian temple architecture. Each pillar rings with a different musical note when struck. The teaching is architectural: in a life of true devotion, every single aspect — every relationship, every task, every conversation — is tuned to the divine frequency. Nothing is excluded from the temple. Everything is sacred.</p>
+
+        <div class="temple-quote" data-testid="sudareshwaram-quote">
+          <p>"You cannot think your way to the divine. You can only love your way there — and love does not require preparation. It requires only the willingness to be moved."</p>
+          <cite>— Tamil Shaivite Bhakti Tradition</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEMPLE 6: KAPALEESHWARAM ===== -->
+<section id="kapaleeshwaram" class="temple-section fade-up" data-testid="temple-kapaleeshwaram">
+  <div class="container">
+    <div class="row align-items-center g-5 flex-lg-row-reverse">
+      <div class="col-lg-5">
+        <div class="temple-img-wrap" data-testid="kapaleeshwaram-image">
+          <img src="images/gopuram.jpg" alt="Kapaleeshwaram Temple, Mylapore — Shiva as transformer, Parvati as the devoted peacock" loading="lazy">
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="temple-number" data-testid="temple-number-6">06</div>
+        <div class="temple-element-badge"><i class="fa-solid fa-feather me-1"></i> Transformation — The Return to Beginning</div>
+        <p class="temple-location"><i class="fa-solid fa-location-dot"></i> Mylapore, Chennai, Tamil Nadu</p>
+        <h2 class="mt-1" style="font-size:clamp(1.8rem,3.5vw,2.6rem);">Kapaleeshwaram</h2>
+        <div class="section-divider-left"></div>
+
+        <p>The name <span class="sanskrit">Kapaleeshwara</span> derives from <em>kapala</em> (skull) and <em>Ishwara</em> (Lord) — Shiva as the one who transcends death by wearing its emblem. This is the form of Shiva who broke the fifth head of Brahma, ending the cycle of arrogant creation, and was required to carry the skull as a reminder that even the gods are accountable. In Shaivam philosophy, <span class="sanskrit">Kapala</span> is not macabre — it is honest. The skull teaches that every form is temporary; what remains after all forms are exhausted is the awareness that witnessed them all.</p>
+
+        <p>The great legend of Kapaleeshwaram involves Parvati. While Shiva was speaking of the deepest philosophical truths, Parvati became momentarily distracted by a pair of peacocks. Shiva withdrew his presence, and Parvati — understanding the gravity of her inattention — took the form of a peacock (<span class="sanskrit">mayil</span>) and performed intense penance in Mylapore beneath a punnai tree until Shiva returned to her. This is why peacocks roam the temple precincts to this day.</p>
+
+        <p>The teaching of Kapaleeshwaram is perhaps the most compassionate in all of Shaivam: <em>every seeker loses the thread sometimes</em>. Distraction is not the opposite of the spiritual path — returning to the path, again and again, with renewed sincerity, IS the path. Parvati did not remain ashamed. She transformed her lapse into the most devoted practice. The peacock's iridescent plumage is the beauty that comes from honest, earnest return.</p>
+
+        <div class="temple-quote" data-testid="kapaleeshwaram-quote">
+          <p>"Even the goddess needed to begin again. Every sincere return to practice is as sacred as the first step — perhaps more so, for it is chosen with full knowledge of the cost."</p>
+          <cite>— Shaivam Teaching on Perseverance and Grace</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEMPLE 7: VISWESA ===== -->
+<section id="viswesa" class="temple-section temple-section-alt fade-up" data-testid="temple-viswesa">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <div class="temple-img-wrap" data-testid="viswesa-image">
+          <img src="images/temple-kanchipuram.jpg" alt="Ekambareshwaram Temple, Kanchipuram — Viswesa, the Earth shrine of the Pancha Bhuta Stalas" loading="lazy">
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="temple-number" data-testid="temple-number-7">07</div>
+        <div class="temple-element-badge"><i class="fa-solid fa-seedling me-1"></i> Prithvi — Earth / The Foundation of Wisdom</div>
+        <p class="temple-location"><i class="fa-solid fa-location-dot"></i> Kanchipuram, Tamil Nadu</p>
+        <h2 class="mt-1" style="font-size:clamp(1.8rem,3.5vw,2.6rem);">Viswesa</h2>
+        <div class="section-divider-left"></div>
+
+        <p><span class="sanskrit">Viswesa</span> — the Universal Lord — is the form of Shiva as the ground itself: not the fire of transformation, not the space of pure consciousness, but the patient, sustaining, ever-present foundation upon which all of existence stands. Enshrined at <span class="sanskrit">Ekambareshwaram</span> in Kanchipuram, this is the Earth (<span class="sanskrit">Prithvi</span>) <span class="sanskrit">Pancha Bhuta Stala</span> — and uniquely among all the elemental shrines, the linga here is not carved from stone. It is made from the earth itself — sand from the sacred Ganga, shaped by devotion and rendered permanent through divine grace.</p>
+
+        <p>Within the temple's vast courtyard grows a mango tree (<span class="sanskrit">Sthala Vriksha</span>) said to be over 3,500 years old — its four branches bearing four different varieties of mango, one for each of the four <span class="sanskrit">Vedas</span>. It is under this tree that Parvati came to practise her deepest penance, shaping the earth linga with her own hands. Shiva tested her devotion by causing the sacred Ganga to flood the tank and threaten her offering. She embraced the linga to protect it, refusing to be moved. The waters receded. The earth remained. The goddess remained.</p>
+
+        <p>The philosophical teaching of Viswesa is the capstone of the Shaivam journey. All the space of Visweswaram, all the water of Jambukeshwaram, all the fire of Arunachala, all the beauty of Sudareshwaram, and all the transformation of Kapaleeshwaram — these must finally return to the earth. Wisdom is not the escape from embodiment; it is the complete inhabitation of it. To be fully present in the body, in the moment, in the relationship, in the task at hand — this is <span class="sanskrit">Prithvi</span>: the final, foundational, most necessary teaching.</p>
+
+        <div class="temple-quote" data-testid="viswesa-quote">
+          <p>"Freedom begins in the body. Ground yourself first — the sky finds those who are rooted. The deepest roots reach the deepest waters; the highest aspirations grow from the most stable ground."</p>
+          <cite>— Ekambareshwaram Temple Tradition, Kanchipuram</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CLOSING: THE TEMPLE WITHIN ===== -->
+<section class="closing-section fade-up" data-testid="temple-within-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 text-center">
+        <span class="section-tag" style="color:rgba(211,84,0,0.85);">The Inner Pilgrimage</span>
+        <h2 class="mt-2">The Temple Within</h2>
+        <div class="section-divider"></div>
+        <p>Every outer temple is the projection of an inner geography. Shaivam has always maintained that the most important pilgrimage is not across the plains of India but through the landscape of your own consciousness. The gopuram is your own entry into sincere attention. The sanctum is the silence at the centre of your awareness. The deity is the recognition of what you have always been.</p>
+        <p>Visit each of these seven sacred spaces — in person or in contemplation — and ask yourself: which element is most alive in you right now? Where do you need the spaciousness of Kashi, the fluidity of Thiruvanaikaval, the discipline of Thanjavur, the burning clarity of Tiruvannamalai, the openheartedness of Madurai, the humble return of Mylapore, or the steady grounding of Kanchipuram?</p>
+        <p>The answer is the beginning of your practice.</p>
+        <a href="about.html#goal-achievement-cycle" class="btn-saffron mt-3 d-inline-block" data-testid="temple-cta-gac-btn">Explore the Goal Achievement Cycle</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER CTA -->
+<section class="newsletter-section" data-testid="newsletter-section">
+  <div class="container">
+    <div class="col-lg-7 mx-auto">
+      <span class="section-tag" style="color:rgba(211,84,0,0.8);">Stay Connected</span>
+      <h3 class="mt-2">Receive Monthly Insights</h3>
+      <p>Join seekers around the world receiving thoughtful reflections on Shaivam philosophy, temple traditions, new blog posts, and upcoming events.</p>
+      <form class="newsletter-form" data-testid="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+        <input type="email" placeholder="Your email address" aria-label="Email address" required data-testid="newsletter-email-input">
+        <button type="submit" class="btn-saffron" data-testid="newsletter-submit-btn">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer" data-testid="site-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <span class="footer-brand"><img src="images/logo.png" alt="Nandi" class="footer-nandi-logo"><span class="samarkan-text">Shaivam</span></span>
+        <p>A philosophy of freedom, balance, and infinite growth. Ancient wisdom for modern life — exploring the dynamic interplay between stability and change.</p>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6>Navigate</h6>
+        <ul>
+          <li><a href="index.html" data-testid="footer-home-link">Home</a></li>
+          <li><a href="about.html" data-testid="footer-about-link">About</a></li>
+          <li><a href="temples.html" data-testid="footer-temples-link">Temples</a></li>
+          <li><a href="videos.html" data-testid="footer-videos-link">Videos</a></li>
+          <li><a href="blog.html" data-testid="footer-blog-link">Blog</a></li>
+          <li><a href="contact.html" data-testid="footer-contact-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6>Philosophy</h6>
+        <ul>
+          <li><a href="about.html#dual-monism">Dual Monism (Undvaitam)</a></li>
+          <li><a href="about.html#two-domains">The Two Domains</a></li>
+          <li><a href="about.html#three-paths">The Three Paths</a></li>
+          <li><a href="about.html#deities">Deity Archetypes</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6>Wisdom</h6>
+        <p class="fst-italic">"Shaivam is the constant pursuit of what we believe"</p>
+        <p class="small mt-2">Namah Parvati pataye hara hara Mahadeva</p>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <p class="footer-bottom">&copy; 2025 Shaivam Philosophy. All rights reserved. | Rooted in the ancient wisdom of South Indian Shaivite tradition. &nbsp;&middot;&nbsp; <a href="privacy.html" style="color:var(--text-muted);">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

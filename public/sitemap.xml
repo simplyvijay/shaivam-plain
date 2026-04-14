@@ -13,35 +13,35 @@
 
   <!-- About -->
   <url>
-    <loc>https://shaivam.info/about.html</loc>
+    <loc>https://shaivam.info/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Temples -->
   <url>
-    <loc>https://shaivam.info/temples.html</loc>
+    <loc>https://shaivam.info/temples</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <!-- Videos -->
   <url>
-    <loc>https://shaivam.info/videos.html</loc>
+    <loc>https://shaivam.info/videos</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Blog index -->
   <url>
-    <loc>https://shaivam.info/blog.html</loc>
+    <loc>https://shaivam.info/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Blog Post 1: Understanding Dual Monism -->
   <url>
-    <loc>https://shaivam.info/post1.html</loc>
+    <loc>https://shaivam.info/blog/dual-monism</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -49,7 +49,7 @@
 
   <!-- Blog Post 2: Ganesha's Gift -->
   <url>
-    <loc>https://shaivam.info/post2.html</loc>
+    <loc>https://shaivam.info/blog/ganesha-gift</loc>
     <lastmod>2024-01-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -57,7 +57,7 @@
 
   <!-- Blog Post 3: The Navagraham -->
   <url>
-    <loc>https://shaivam.info/post3.html</loc>
+    <loc>https://shaivam.info/blog/navagraham</loc>
     <lastmod>2024-02-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -65,7 +65,7 @@
 
   <!-- Contact -->
   <url>
-    <loc>https://shaivam.info/contact.html</loc>
+    <loc>https://shaivam.info/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

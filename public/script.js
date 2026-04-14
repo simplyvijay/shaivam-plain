@@ -206,9 +206,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.querySelectorAll('.newsletter-form').forEach(f => f.addEventListener('submit', handleNewsletterSubmit));
 
-  // Smooth active nav detection
-  const page = window.location.pathname.split('/').pop() || 'index.html';
+  // Active nav detection — folder-based URL structure
+  // e.g. /shaivam/about/ → 'about',  /shaivam/blog/dual-monism/ → 'blog'
+  const pathSegments = window.location.pathname
+    .split('/')
+    .filter(p => p && p !== 'index.html' && p !== 'shaivam');
+  const currentSection = pathSegments.length > 0 ? pathSegments[0] : 'index';
   document.querySelectorAll('.nav-link[data-page]').forEach(link => {
-    if (link.getAttribute('data-page') === page) link.classList.add('active');
+    if (link.getAttribute('data-page') === currentSection) link.classList.add('active');
   });
 });

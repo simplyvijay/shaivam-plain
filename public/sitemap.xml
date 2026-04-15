@@ -79,6 +79,14 @@
     <priority>0.75</priority>
   </url>
 
+  <!-- Blog Post 6: Pradosham -->
+  <url>
+    <loc>https://shaivam.info/blog/pradosham</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
   <!-- Contact -->
   <url>
     <loc>https://shaivam.info/contact</loc>

@@ -19,6 +19,20 @@ Static HTML website for **Shaivam Philosophy** (shaivam.info), hosted on **Fireb
 - 1-level deep (e.g., `about/`): `../images/logo.png`, `../style.css`
 - 2-levels deep (e.g., `blog/dual-monism/`): `../../images/logo.png`, `../../style.css`
 
+### Google Analytics
+Every page must include the GA4 snippet as the **first thing inside `<head>`** (before `<meta charset>`). The measurement ID is `G-ZM6ST4KGKX`:
+```html
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM6ST4KGKX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZM6ST4KGKX');
+</script>
+```
+
 ### SEO — Every Page Requires Full Meta
 Each page must include: `<meta name="description">`, Open Graph tags (`og:title`, `og:description`, `og:url`, `og:image`), Twitter Card tags, `<link rel="canonical">`, and a `<script type="application/ld+json">` block with appropriate Schema.org type (`WebPage`, `Blog`, `BlogPosting`, `ContactPage`, etc.). See `public/index.html` for the complete pattern.
 
@@ -42,7 +56,8 @@ Active nav link is set via `data-page` attribute + JS detection in `script.js` (
 ## Adding a New Page
 1. Create `public/{section}/index.html`
 2. Copy the full `<head>` block, navbar, footer, and script includes from an existing peer page
-3. Adjust all relative paths (`../` or `../../`) based on directory depth
+3. Ensure the GA4 snippet (`G-ZM6ST4KGKX`) is the first thing inside `<head>` (see "Google Analytics" above)
+4. Adjust all relative paths (`../` or `../../`) based on directory depth
 4. Set the correct `<link rel="canonical">`, OG tags, and JSON-LD
 5. Add the navbar link (with `data-page` attribute) across **all** existing `index.html` files
 6. Add the URL to `public/sitemap.xml`

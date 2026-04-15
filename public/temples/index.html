@@ -188,9 +188,69 @@
     .closing-section h2 { color: var(--secondary); }
     .closing-section p { color: rgba(250, 249, 246, 0.78); max-width: 680px; margin: 0 auto 1.5rem; }
 
+    .convergence-card {
+      background-color: var(--surface-white);
+      border: 1px solid var(--neutral-light);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 1.75rem 1.75rem 1.75rem 1.6rem;
+      height: 100%;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .convergence-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+    }
+
+    .conv-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 0.45rem;
+    }
+
+    .conv-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--neutral-dark);
+      margin-bottom: 0.2rem;
+      line-height: 1.3;
+    }
+
+    .conv-subtitle {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.9rem;
+      display: block;
+    }
+
+    .convergence-card p {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      line-height: 1.74;
+      margin: 0;
+    }
+
+    .convergences-closing {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--neutral-dark);
+      line-height: 1.75;
+    }
+
     @media (max-width: 767px) {
       .temple-img-wrap img { height: 280px; }
       .temple-section { padding: 3.5rem 0; }
+      .conv-number { font-size: 1.9rem; }
+      .conv-title { font-size: 1.1rem; }
     }
   </style>
 </head>
@@ -231,15 +291,56 @@
 <!-- INTRODUCTION -->
 <section class="section-padding" data-testid="temples-intro-section">
   <div class="container">
+    <!-- Intro heading -->
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center">
         <span class="section-tag">Sacred Convergence</span>
         <h2 class="mt-2">Significance of Temples</h2>
         <div class="section-divider"></div>
-        <p>When we approach a temple, we often think of it primarily as a place of worship — a location where devotees gather to offer prayers, perform rituals, and seek divine blessings. While this understanding is not incorrect, it represents only a partial view of what temples truly are within Shaivam. Temples are far more than venues for religious observance; they are carefully designed spaces of <em>convergence</em> — where seemingly opposed dimensions of human consciousness and spiritual pursuit meet, integrate, and mutually reinforce one another.</p>
-        <p>The first and most fundamental convergence is the meeting of <span class="sanskrit">Tri-Margam</span> and <span class="sanskrit">Soujanya-Margam</span> — the path of belief and the path of reasoning. <span class="sanskrit">Tri-Margam</span> represents devotion and faith: the acceptance of <span class="sanskrit">Viswesam</span>, the foundational truth that exists independent of our understanding or verification. <span class="sanskrit">Soujanya-Margam</span> represents reasoning and meaning-making: the engagement with <span class="sanskrit">Eshwaram</span>, the domain of lived experience where truth is continuously tested, refined, and deepened through inquiry and action. In many traditions, faith and reason are positioned as enemies — one is told either to accept on faith without questioning or to reject faith entirely in favour of rational investigation. The temple refuses this false dichotomy. Within its sacred space, both the devotee who comes with pure devotion and the seeker who comes with questions find their approach honoured and sustained.</p>
-        <p>The second convergence is the meeting of <span class="sanskrit">Viswesam</span> and <span class="sanskrit">Eshwaram</span> — the eternal and the evolving, the static foundation and the dynamic pursuit. The inner sanctum, where the deity resides, represents <span class="sanskrit">Viswesam</span> — the unchanging archetypes and principles that do not alter with time or circumstance. The outer rituals, offerings, and daily endeavours represent <span class="sanskrit">Eshwaram</span> — the continuous, living pursuit of understanding through experience and reflection. The temple bridges what can otherwise feel like a fragmentation between what we believe in principle and what we do in practice. In the moment of <span class="sanskrit">darshan</span> — seeing and being seen by the deity — what is believed and what is pursued become one.</p>
-        <p>Seven sacred temples stand as the most concentrated expressions of these convergences in Shaivam tradition. Each is not merely a geographical location but a philosophical station — a living space where <span class="sanskrit">Tri-Margam</span> and <span class="sanskrit">Soujanya-Margam</span> flow together, where <span class="sanskrit">Viswesam</span> meets <span class="sanskrit">Eshwaram</span>, and where the constant pursuit of what we believe is given form, community, and enduring expression. Visit them with your whole self — bring your devotion and your questions, your certainty and your seeking. The temple has room for all of it.</p>
+        <p>Temples, in the Shaivam tradition, are more than places of worship — they are carefully designed spaces of <em>convergence</em>, where the most fundamental dualities of human consciousness meet, integrate, and mutually reinforce one another. These convergences are not accidental features of temple design but represent the deliberate architectural, ritual, and symbolic embodiment of Shaivam's core philosophical principles. Four convergences lie at the heart of what every temple embodies.</p>
+      </div>
+    </div>
+
+    <!-- 4 Convergences Grid -->
+    <div class="row g-4 mt-3">
+      <div class="col-md-6 fade-up">
+        <div class="convergence-card" data-testid="convergence-tri-soujanya">
+          <div class="conv-number">01</div>
+          <div class="conv-title">Tri-Margam &amp; Soujanya-Margam</div>
+          <span class="conv-subtitle">Belief &amp; Reasoning</span>
+          <p><span class="sanskrit">Tri-Margam</span> — the path of faith and devotion — orients the seeker toward <span class="sanskrit">Viswesam</span>, the foundational truth accepted as a living conviction. <span class="sanskrit">Soujanya-Margam</span> — the path of reasoning and inquiry — engages <span class="sanskrit">Eshwaram</span>, the domain of lived experience where truth is continuously tested and deepened through action and reflection. Many traditions force a choice between faith and reason. The temple refuses this false dichotomy. Within its sacred space, both the devotee who comes with pure devotion and the seeker who arrives with questions find their approach honoured — faith deepened by understanding, understanding grounded by faith.</p>
+        </div>
+      </div>
+      <div class="col-md-6 fade-up">
+        <div class="convergence-card" data-testid="convergence-viswesam-eshwaram">
+          <div class="conv-number">02</div>
+          <div class="conv-title">Viswesam &amp; Eshwaram</div>
+          <span class="conv-subtitle">The Eternal &amp; The Evolving</span>
+          <p><span class="sanskrit">Viswesam</span> is the domain of the unchanging — archetypes and foundational truths that do not alter with time or circumstance. <span class="sanskrit">Eshwaram</span> is the domain of continuous engagement — lived experience where understanding is refined through action, inquiry, and growth. In ordinary life these can feel disconnected: what we believe in principle and what we do in practice seem to occupy separate spheres. The temple bridges this gap. The inner sanctum (<span class="sanskrit">Viswesam</span>) and the outer rituals and offerings (<span class="sanskrit">Eshwaram</span>) are in constant dialogue. In the moment of <span class="sanskrit">darshan</span> — seeing and being seen by the deity — what is eternal and what is immediate become one.</p>
+        </div>
+      </div>
+      <div class="col-md-6 fade-up">
+        <div class="convergence-card" data-testid="convergence-belief-pursuit">
+          <div class="conv-number">03</div>
+          <div class="conv-title">What We Believe &amp; What We Pursue</div>
+          <span class="conv-subtitle">The Constant Pursuit of What We Believe</span>
+          <p><em>"Shaivam is the constant pursuit of what we believe."</em> The temple is the physical and spiritual embodiment of this principle. It preserves what we believe — the values, archetypes, and truths encoded in deity, architecture, and ritual story — while simultaneously sustaining the constant pursuit through community practice, inquiry, and lived engagement. Belief without pursuit becomes rigid dogma, disconnected from life. Pursuit without belief becomes aimless wandering, lacking orientation. The temple demonstrates how to hold both: to maintain deep conviction while remaining open to ever-deeper understanding, to honour the tradition while embracing the growth that living inevitably brings.</p>
+        </div>
+      </div>
+      <div class="col-md-6 fade-up">
+        <div class="convergence-card" data-testid="convergence-realization-endeavor">
+          <div class="conv-number">04</div>
+          <div class="conv-title">Realization &amp; Endeavor</div>
+          <span class="conv-subtitle">Arrival &amp; The Ongoing Journey</span>
+          <p>Have we already arrived, or are we still on the way? This is not a trick question — it is the paradox at the heart of genuine practice. The temple holds both truths simultaneously. In <span class="sanskrit">pradakshina</span> (circumambulation), the devotee completes a full circuit and returns to the starting point — genuinely arrived. Yet they begin again. Each completion is real; no completion is final. Each realization opens new horizons and deepens the capacity for further pursuit. The temple teaches that there is no contradiction between celebrating how far we have come and acknowledging how much remains — both are expressions of the same sincere engagement with truth.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Closing connecting thought -->
+    <div class="row justify-content-center mt-5">
+      <div class="col-lg-8 text-center">
+        <p class="convergences-closing">Seven sacred temples stand as the living expressions of all four convergences — spaces where <span class="sanskrit">Tri-Margam</span> and <span class="sanskrit">Soujanya-Margam</span> flow together, where <span class="sanskrit">Viswesam</span> meets <span class="sanskrit">Eshwaram</span>, and where the constant pursuit of what we believe is given form, community, and enduring expression across generations.</p>
       </div>
     </div>
 

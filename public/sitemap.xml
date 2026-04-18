@@ -87,6 +87,14 @@
     <priority>0.75</priority>
   </url>
 
+  <!-- Blog Post 7: Triyambukeshwaram -->
+  <url>
+    <loc>https://shaivam.info/blog/triyambukeshwaram</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
   <!-- Contact -->
   <url>
     <loc>https://shaivam.info/contact</loc>

@@ -18,13 +18,6 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Temples -->
-  <url>
-    <loc>https://shaivam.info/temples</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
   <!-- Videos -->
   <url>
     <loc>https://shaivam.info/videos</loc>
@@ -83,6 +76,14 @@
   <url>
     <loc>https://shaivam.info/blog/pradosham</loc>
     <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Blog Post 8: Significance of Temples -->
+  <url>
+    <loc>https://shaivam.info/blog/significance-of-temples</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>

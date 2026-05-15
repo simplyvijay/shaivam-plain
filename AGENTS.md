@@ -46,7 +46,7 @@ Theming uses CSS custom properties defined in `:root` in `style.css`:
 - Typography: headings use `Cormorant Garamond`, body uses `Lato`, brand uses custom `Samarkan` font
 
 ### Nav Active State
-Active nav link is set via `data-page` attribute + JS detection in `script.js` (line ~211). When adding pages, add a matching `data-page` value to the nav link.
+Active nav link is set via `data-page` attribute + JS detection in `script.js` (lines 209–217). The detection extracts the first path segment (e.g., `/blog/dual-monism/` → `blog`), so all blog posts activate the same nav link. When adding pages, add a matching `data-page` value to the nav link.
 
 ## CDN Dependencies (no npm runtime deps used in browser)
 - Bootstrap 5.3.2 (CSS + JS bundle)
@@ -65,6 +65,41 @@ Active nav link is set via `data-page` attribute + JS detection in `script.js` (
 ## Adding a Blog Post
 Create `public/blog/{slug}/index.html`. Use `public/blog/dual-monism/index.html` as the template — it includes the `post-header`, `post-content`, sidebar, and related-posts sections. Update the blog listing in `public/blog/index.html` and the "Recent Blog Posts" section on `public/index.html` if desired.
 
+## Special Pages
+
+### Privacy Policy
+`public/privacy/index.html` is a non-indexed page with special navbar configuration. Note:
+- Uses `id="navbarNav"` (not `mainNav`) for collapse target
+- Omits GA4 snippet (no tracking on this page)
+- Uses `btn-nav-cta` class on Connect button (not `btn btn-saffron btn-sm`)
+- Include breadcrumb navigation linking back to `/contact/`
+
+### Newsletter Form
+The homepage includes an email subscription form. Pattern:
+```html
+<form class="newsletter-form" data-testid="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+  <input type="email" placeholder="Your email address" aria-label="Email address" required data-testid="newsletter-email-input">
+  <button type="submit" class="btn-saffron" data-testid="newsletter-submit-btn">Subscribe</button>
+</form>
+```
+The `handleNewsletterSubmit` function (in `script.js`) handles form submission.
+
+### Footer Structure
+All pages include a 4-column footer with:
+1. **Brand column** — logo, tagline, description
+2. **Navigate** — links to all main pages (Home, About, Videos, Blog, Contact, Privacy)
+3. **Philosophy** — anchor links to `/about/` sections  
+4. **Wisdom** — inspirational quote and mantra
+
+Always include a privacy link at the bottom: `<a href="privacy/">Privacy Policy</a>`
+
+## Blog RSS Feed
+The RSS feed is at `public/blog/feed.xml`. Every page includes:
+```html
+<link rel="alternate" type="application/rss+xml" title="Shaivam Philosophy Blog" href="https://shaivam.info/blog/feed.xml">
+```
+Update `feed.xml` when adding or modifying blog posts.
+
 ## Deployment
 ```bash
 firebase deploy --only hosting:shaivam-8bd79-30558
@@ -75,8 +110,9 @@ No build or compilation required — deploys the `public/` folder directly. The 
 | File | Purpose |
 |---|---|
 | `public/style.css` | All site styles, CSS variables, responsive breakpoints |
-| `public/script.js` | GAC interactive cycle, wisdom quote carousel, scroll animations, nav detection |
+| `public/script.js` | Initialization of interactive modules: Goal Achievement Cycle (GAC) carousel, wisdom quote carousel, scroll animations, navbar scroll behavior, nav link active state, newsletter form submission |
 | `firebase.json` | Hosting config — `public` directory, SPA rewrite rule |
 | `public/sitemap.xml` | All indexed URLs — update when adding pages |
 | `public/robots.txt` | Crawl rules and sitemap reference |
+| `public/blog/feed.xml` | RSS feed for blog posts — update when publishing new content |
 

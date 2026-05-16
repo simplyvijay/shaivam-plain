@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"
-     xmlns:content="http://purl.org/rss/1.0/modules/content/"
-     xmlns:atom="http://www.w3.org/2005/Atom"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>Shaivam Philosophy &#8212; Blog</title>
     <link>https://shaivam.info/blog/</link>
@@ -14,11 +11,7 @@
     <lastBuildDate>Sat, 16 May 2026 00:00:00 +0000</lastBuildDate>
     <ttl>10080</ttl>
     <atom:link href="https://shaivam.info/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <image>
-      <url>https://shaivam.info/images/logo.png</url>
-      <title>Shaivam Philosophy</title>
-      <link>https://shaivam.info/</link>
-    </image>
+    <image><url>https://shaivam.info/images/logo.png</url><title>Shaivam Philosophy</title><link>https://shaivam.info/</link></image>
     <item>
       <title>Modernity: Humanity's Role in Shaping a Better World</title>
       <link>https://shaivam.info/blog/modernity/</link>
@@ -675,7 +668,7 @@
       <dc:creator>contact@shaivam.info (Shaivam Philosophy)</dc:creator>
       <category>Deity Archetypes</category>
       <description><![CDATA[How the elephant-headed archetype teaches us to begin every endeavour with clear vision and confident action.]]></description>
-      <enclosure url="https://shaivam.info/images/temple-columns.jpg" type="image/jpeg" length="0"/>
+      <enclosure url="https://shaivam.info/images/ganesha.jpg" type="image/jpeg" length="0"/>
       <content:encoded><![CDATA[
 <p>Of all the archetypes in Shaivam philosophy, Ganesha is perhaps the most immediately practical. While Eshwara represents the ultimate destination and Parvati the path, Ganesha represents something that every seeker and achiever must grapple with from the very first moment of any endeavour: <em>How do I begin?</em></p>
 

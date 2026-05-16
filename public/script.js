@@ -197,12 +197,110 @@ function initNavbarScroll() {
   }, { passive: true });
 }
 
+// ===== SHARE MODAL =====
+function initShareModal() {
+  // Build overlay once and reuse
+  const overlay = document.createElement('div');
+  overlay.className = 'share-overlay';
+  overlay.setAttribute('data-testid', 'share-overlay');
+  overlay.innerHTML = `
+    <div class="share-modal" role="dialog" aria-modal="true" aria-labelledby="shareModalTitle" data-testid="share-modal">
+      <button class="share-modal-close" aria-label="Close share menu" data-testid="share-modal-close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="share-modal-title" id="shareModalTitle">Share this article</div>
+      <div class="share-modal-subtitle" id="shareModalUrl"></div>
+      <div class="share-actions">
+        <a class="share-btn-fb" id="shareModalFb" href="#" target="_blank" rel="noopener noreferrer" data-testid="share-facebook-btn">
+          <i class="fa-brands fa-facebook"></i> Share on Facebook
+        </a>
+        <div class="share-divider">or</div>
+        <button class="share-btn-copy" id="shareModalCopy" data-testid="share-copy-btn">
+          <i class="fa-regular fa-copy"></i>
+          <span id="shareModalCopyText">Copy link</span>
+        </button>
+      </div>
+    </div>`;
+  document.body.appendChild(overlay);
+
+  const modal   = overlay.querySelector('.share-modal');
+  const closeBtn = overlay.querySelector('.share-modal-close');
+  const fbBtn    = overlay.querySelector('#shareModalFb');
+  const copyBtn  = overlay.querySelector('#shareModalCopy');
+  const copyText = overlay.querySelector('#shareModalCopyText');
+  const urlLabel = overlay.querySelector('#shareModalUrl');
+
+  function openModal() {
+    const url = window.location.href;
+    urlLabel.textContent = url;
+    fbBtn.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+    overlay.style.display = 'flex';
+    // Trigger animation next frame
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() { overlay.classList.add('open'); });
+    });
+    closeBtn.focus();
+  }
+
+  function closeModal() {
+    overlay.classList.remove('open');
+    overlay.addEventListener('transitionend', function hide() {
+      overlay.style.display = 'none';
+      overlay.removeEventListener('transitionend', hide);
+    });
+  }
+
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeModal();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+  });
+
+  copyBtn.addEventListener('click', function() {
+    const url = window.location.href;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(showCopied);
+    } else {
+      // Fallback for older browsers
+      const ta = document.createElement('textarea');
+      ta.value = url;
+      ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px;';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); showCopied(); } catch (_) {}
+      document.body.removeChild(ta);
+    }
+  });
+
+  function showCopied() {
+    copyBtn.classList.add('copied');
+    copyText.textContent = 'Link copied!';
+    copyBtn.querySelector('i').className = 'fa-solid fa-check';
+    setTimeout(function() {
+      copyBtn.classList.remove('copied');
+      copyText.textContent = 'Copy link';
+      copyBtn.querySelector('i').className = 'fa-regular fa-copy';
+    }, 2500);
+  }
+
+  // Attach to every share button on the page
+  document.querySelectorAll('[data-testid="share-btn"]').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      openModal();
+    });
+  });
+}
+
 // ===== INIT =====
 document.addEventListener('DOMContentLoaded', function() {
   initScrollAnimations();
   initNavbarScroll();
   initGAC();
   initWisdomQuotes();
+  initShareModal();
 
   document.querySelectorAll('.newsletter-form').forEach(f => f.addEventListener('submit', handleNewsletterSubmit));
 

@@ -846,3 +846,134 @@ h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
   .contact-card { padding: 1.75rem; }
   h1 { font-size: 2.25rem; }
 }
+
+/* ===== SHARE MODAL ===== */
+.share-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(33, 33, 33, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 9000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.22s ease;
+  padding: 1rem;
+}
+.share-overlay.open { opacity: 1; }
+
+.share-modal {
+  background: var(--surface-white);
+  border-radius: 14px;
+  padding: 2rem 2rem 1.75rem;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+  transform: translateY(18px) scale(0.97);
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  opacity: 0;
+  position: relative;
+}
+.share-overlay.open .share-modal {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.share-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--neutral-light);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.share-modal-close:hover { background: #c8c8c8; color: var(--neutral-dark); }
+
+.share-modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--neutral-dark);
+  margin-bottom: 0.25rem;
+}
+.share-modal-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.share-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.share-btn-fb {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  background: #1877F2;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease;
+  font-family: 'Lato', sans-serif;
+}
+.share-btn-fb:hover { background: #1560c0; transform: translateY(-1px); color: #fff; }
+.share-btn-fb i { font-size: 1.1rem; }
+
+.share-btn-copy {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  background: var(--surface-offwhite);
+  color: var(--neutral-dark);
+  border: 1.5px solid var(--neutral-light);
+  border-radius: 9px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  font-family: 'Lato', sans-serif;
+}
+.share-btn-copy:hover { background: #f0ece6; border-color: #c0bbb4; transform: translateY(-1px); }
+.share-btn-copy.copied { background: #e8f5e9; border-color: #81c784; color: #2e7d32; }
+.share-btn-copy i { font-size: 1.05rem; color: var(--primary); }
+.share-btn-copy.copied i { color: #2e7d32; }
+
+.share-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0.25rem 0;
+}
+.share-divider::before, .share-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--neutral-light);
+}

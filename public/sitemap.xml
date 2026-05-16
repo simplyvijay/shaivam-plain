@@ -80,6 +80,14 @@
     <priority>0.75</priority>
   </url>
 
+  <!-- Blog Post 9: Modernity -->
+  <url>
+    <loc>https://shaivam.info/blog/modernity/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
   <!-- Blog Post 8: Significance of Temples -->
   <url>
     <loc>https://shaivam.info/blog/significance-of-temples</loc>

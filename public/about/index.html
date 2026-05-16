@@ -17,11 +17,11 @@
   <meta name="author" content="Shaivam Philosophy">
   <meta name="robots" content="index, follow">
   <title>About Shaivam | Understanding the Philosophy</title>
-  <link rel="canonical" href="https://shaivam.info/about">
+  <link rel="canonical" href="https://shaivam.info/about/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="About Shaivam | Understanding the Philosophy">
   <meta property="og:description" content="A comprehensive guide to Shaivam philosophy — Dual Monism, Goal Achievement Cycle, Deity Archetypes, and the Navagraham.">
-  <meta property="og:url" content="https://shaivam.info/about">
+  <meta property="og:url" content="https://shaivam.info/about/">
   <meta property="og:site_name" content="Shaivam Philosophy">
   <meta property="og:image" content="https://shaivam.info/images/temple-columns.jpg">
   <meta property="og:locale" content="en_US">
@@ -29,7 +29,7 @@
   <meta name="twitter:title" content="About Shaivam | Understanding the Philosophy">
   <meta name="twitter:description" content="A complete guide: Dual Monism, Deity Archetypes, Navagraham, and the Goal Achievement Cycle.">
   <meta name="twitter:image" content="https://shaivam.info/images/temple-columns.jpg">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"About Shaivam","url":"https://shaivam.info/about.html","description":"A comprehensive guide to Shaivam philosophy.","isPartOf":{"@type":"WebSite","name":"Shaivam Philosophy","url":"https://shaivam.info"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"About Shaivam","url":"https://shaivam.info/about/","description":"A comprehensive guide to Shaivam philosophy.","isPartOf":{"@type":"WebSite","name":"Shaivam Philosophy","url":"https://shaivam.info/"}}</script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +39,83 @@
   <link rel="apple-touch-icon" href="../images/logo.png">
   <link rel="stylesheet" href="../style.css">
   <link rel="alternate" type="application/rss+xml" title="Shaivam Philosophy Blog" href="https://shaivam.info/blog/feed.xml">
+  <style>
+    .dm-card {
+      background: var(--surface-white);
+      border: 1px solid var(--neutral-light);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .dm-card:hover { box-shadow: 0 5px 22px rgba(0,0,0,0.1); transform: translateY(-2px); }
+    .dm-header {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      padding: 0.8rem 1.4rem;
+      background: linear-gradient(90deg, rgba(211,84,0,0.09), rgba(211,84,0,0.02));
+      border-bottom: 1px solid rgba(211,84,0,0.12);
+    }
+    .dm-num {
+      font-size: 0.63rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      border: 1px solid rgba(211,84,0,0.35);
+      border-radius: 3px;
+      padding: 0.1rem 0.4rem;
+      flex-shrink: 0;
+    }
+    .dm-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--neutral-dark);
+    }
+    .dm-sub {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-left: auto;
+    }
+    .dm-reality {
+      padding: 1rem 1.4rem;
+      border-right: 1px solid var(--neutral-light);
+    }
+    .dm-reality:last-child { border-right: none; }
+    .dm-rlabel {
+      font-size: 0.98rem;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .dm-reality p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.72;
+      margin: 0;
+    }
+    .dm-combined {
+      background: linear-gradient(90deg, rgba(211,84,0,0.06), rgba(211,84,0,0.01));
+      border-top: 1px solid rgba(211,84,0,0.1);
+      padding: 0.85rem 1.4rem;
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-start;
+    }
+    .dm-combined-icon { color: var(--primary); flex-shrink: 0; margin-top: 0.2rem; font-size: 0.78rem; opacity: 0.75; }
+    .dm-combined p { font-size: 0.875rem; color: var(--neutral-dark); line-height: 1.72; margin: 0; font-style: italic; }
+    @media (max-width: 767px) {
+      .dm-sub { margin-left: 0; }
+      .dm-reality { border-right: none; border-bottom: 1px solid var(--neutral-light); }
+      .dm-reality:last-child { border-bottom: none; }
+    }
+  </style>
 </head>
 <body>
 
@@ -109,48 +186,171 @@
       </div>
     </div>
 
-    <div class="row g-3 mt-2">
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="dual-pair" data-testid="dual-pair-viswesam">
-          <div class="dual-symbol"><i class="fa-solid fa-building-columns"></i></div>
-          <div class="dual-terms">Viswesam &amp; Eshwaram</div>
-          <div class="dual-desc">Legacy &amp; Modernity — the eternal foundation and the living, evolving expression. What is to be believed and how belief is lived.</div>
+    <div class="row g-0 mt-2">
+      <div class="col-12">
+        <p class="text-center" style="color:var(--text-muted);font-size:0.92rem;margin-bottom:1.75rem;">Seven fundamental dual pairs through which Shaivam maps the complete structure of reality — each pair naming two realities that are different, yet inseparable.</p>
+
+        <!-- 01 Sathyam – Nisathyam -->
+        <div class="dm-card fade-up" data-testid="dm-pair-sathyam">
+          <div class="dm-header">
+            <span class="dm-num">01</span>
+            <span class="dm-name">Sathyam &ndash; Nisathyam</span>
+            <span class="dm-sub">Objective &amp; Evolving Truth</span>
+          </div>
+          <div class="row g-0">
+            <div class="col-md-6 dm-reality">
+              <span class="dm-rlabel sanskrit">Sathyam</span>
+              <p>Objective truth; unchanging moral orientation and goodness that exists independent of circumstance; truth as archetype belonging to <span class="sanskrit">Viswesam</span>.</p>
+            </div>
+            <div class="col-md-6 dm-reality">
+              <span class="dm-rlabel sanskrit">Nisathyam</span>
+              <p>Evolving truth; truth as lived, negotiated, and refined through experience within time; truth as it manifests in <span class="sanskrit">Eshwaram</span>.</p>
+            </div>
+          </div>
+          <div class="dm-combined">
+            <i class="fa-solid fa-link dm-combined-icon"></i>
+            <p>Truth is simultaneously stable and evolving. <span class="sanskrit">Sathyam</span> provides the enduring foundation of righteousness, while <span class="sanskrit">Nisathyam</span> ensures that this foundation remains relevant across changing circumstances &mdash; preventing both rigid absolutism and unprincipled relativism.</p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="dual-pair" data-testid="dual-pair-sathyam">
-          <div class="dual-symbol"><i class="fa-solid fa-scale-balanced"></i></div>
-          <div class="dual-terms">Sathyam &amp; Nisathyam</div>
-          <div class="dual-desc">Objective Truth &amp; Evolving Truth — the fixed star by which we navigate, and the living map that adapts to new territory.</div>
+
+        <!-- 02 Eshwara – Parvathi -->
+        <div class="dm-card fade-up" data-testid="dm-pair-eshwara-parvathi">
+          <div class="dm-header">
+            <span class="dm-num">02</span>
+            <span class="dm-name">Eshwara &ndash; Parvathi</span>
+            <span class="dm-sub">Destination &amp; Path</span>
+          </div>
+          <div class="row g-0">
+            <div class="col-md-6 dm-reality">
+              <span class="dm-rlabel sanskrit">Eshwara</span>
+              <p>Creator of nature; external divine; detached awareness; destination; long-term orientation; uncertainty and mystery; represented by the Lingam (formless).</p>
+            </div>
+            <div class="col-md-6 dm-reality">
+              <span class="dm-rlabel sanskrit">Parvathi</span>
+              <p>Maintainer of nature; internal divine; attached awareness; path; immediate engagement; certainty through effort; takes human form; embodies <span class="sanskrit">Lalitha</span> &mdash; illumination through present action.</p>
+            </div>
+          </div>
+          <div class="dm-combined">
+            <i class="fa-solid fa-link dm-combined-icon"></i>
+            <p><span class="sanskrit">Eshwara</span> provides the transcendent ground and ultimate destination, while <span class="sanskrit">Parvathi</span> enables the immanent journey and continuous effort &mdash; external security and internal responsibility, theory and practice, long-term vision and immediate engagement.</p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="dual-pair" data-testid="dual-pair-eshwara-parvati">
-          <div class="dual-symbol"><i class="fa-solid fa-arrows-left-right"></i></div>
-          <div class="dual-terms">Eshwara &amp; Parvati</div>
-          <div class="dual-desc">Destination &amp; Path — constancy and change, the goal and the journey, the external divine and the internal human.</div>
+
+        <!-- 03 Rupam – Arupam -->
+        <div class="dm-card fade-up" data-testid="dm-pair-rupam-arupam">
+          <div class="dm-header">
+            <span class="dm-num">03</span>
+            <span class="dm-name">Rupam &ndash; Arupam</span>
+            <span class="dm-sub">Form &amp; Formless</span>
+          </div>
+          <div class="row g-0">
+            <div class="col-md-6 dm-reality">
+              <span class="dm-rlabel sanskrit">Rupam</span>
+              <p>Reality with form; the perceivable and manifest; external divine expressed through visible symbols, rituals, and devotional practices.</p>
+            </div>
+            <div class="col-md-6 dm-reality">
+              <span class="dm-rlabel sanskrit">Arupam</span>
+              <p>Reality without form; the formless and non-perceivable; internal divine experienced through consciousness, understanding, and direct realization.</p>
+            </div>
+          </div>
+          <div class="dm-combined">
+            <i class="fa-solid fa-link dm-combined-icon"></i>
+            <p>Spirituality encompasses both visible devotion and invisible understanding. <span class="sanskrit">Rupam</span> makes abstract principles accessible through concrete form, while <span class="sanskrit">Arupam</span> represents the direct realization that transcends form &mdash; demonstrating that devotion and rationality are complementary, not opposed.</p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="dual-pair" data-testid="dual-pair-rupam">
-          <div class="dual-symbol"><i class="fa-solid fa-eye"></i></div>
-          <div class="dual-terms">Rupam &amp; Arupam</div>
-          <div class="dual-desc">Visible &amp; Invisible — the manifest world of form and the unmanifest ground of being from which all form emerges.</div>
+
+        <!-- 04 Nithyam – Nilayam -->
+        <div class="dm-card fade-up" data-testid="dm-pair-nithyam-nilayam">
+          <div class="dm-header">
+            <span class="dm-num">04</span>
+            <span class="dm-name">Nithyam &ndash; Nilayam</span>
+            <span class="dm-sub">Everything Changes &amp; Nothing Changes</span>
+          </div>
+          <div class="row g-0">
+            <div class="col-md-6 dm-reality">
+              <span class="dm-rlabel sanskrit">Nithyam</span>
+              <p>Everything changes; eternal transformation as the fundamental condition of existence; continuous evolution and adaptation as the nature of all things.</p>
+            </div>
+            <div class="col-md-6 dm-reality">
+              <span class="dm-rlabel sanskrit">Nilayam</span>
+              <p>Nothing changes; everything is just right as it is; the stability and completeness of present reality as the ground of all experience.</p>
+            </div>
+          </div>
+          <div class="dm-combined">
+            <i class="fa-solid fa-link dm-combined-icon"></i>
+            <p>Reality is simultaneously changing and stable. <span class="sanskrit">Nithyam</span> represents the dynamic force of transformation, while <span class="sanskrit">Nilayam</span> affirms the completeness of what exists &mdash; resolving the paradox between becoming and being, between the river that is always moving and always the same river.</p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="dual-pair" data-testid="dual-pair-nithyam">
-          <div class="dual-symbol"><i class="fa-solid fa-rotate"></i></div>
-          <div class="dual-terms">Nithyam &amp; Nilayam</div>
-          <div class="dual-desc">Everything Changes &amp; Nothing Changes — the paradox at the heart of existence, the river that is always moving and always the same river.</div>
+
+        <!-- 05 Sarvam – Nirvaanam -->
+        <div class="dm-card fade-up" data-testid="dm-pair-sarvam-nirvaanam">
+          <div class="dm-header">
+            <span class="dm-num">05</span>
+            <span class="dm-name">Sarvam &ndash; Nirvaanam</span>
+            <span class="dm-sub">Everything &amp; Nothing</span>
+          </div>
+          <div class="row g-0">
+            <div class="col-md-6 dm-reality">
+              <span class="dm-rlabel sanskrit">Sarvam</span>
+              <p>Everything; limitless expansion and engagement with all dimensions of existence; the fullness of human progress across material, intellectual, social, and spiritual domains.</p>
+            </div>
+            <div class="col-md-6 dm-reality">
+              <span class="dm-rlabel sanskrit">Nirvaanam</span>
+              <p>Nothing; the recognition that nothing is ultimately important; the emptiness that relativizes all achievement within infinite mystery and prevents arrogance.</p>
+            </div>
+          </div>
+          <div class="dm-combined">
+            <i class="fa-solid fa-link dm-combined-icon"></i>
+            <p>Life requires both serious engagement and ultimate detachment. <span class="sanskrit">Sarvam</span> drives unlimited growth and prevents stagnation, while <span class="sanskrit">Nirvaanam</span> provides the perspective that keeps achievement in its proper place &mdash; enabling infinite growth within infinite mystery.</p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4 fade-up">
-        <div class="dual-pair" data-testid="dual-pair-sarvam">
-          <div class="dual-symbol"><i class="fa-solid fa-infinity"></i></div>
-          <div class="dual-terms">Sarvam &amp; Nirvaanam</div>
-          <div class="dual-desc">Everything &amp; Nothing — the fullness of manifest existence and the emptiness that holds it, the cosmos and the void from which it springs.</div>
+
+        <!-- 06 Swarnam – Arnam -->
+        <div class="dm-card fade-up" data-testid="dm-pair-swarnam-arnam">
+          <div class="dm-header">
+            <span class="dm-num">06</span>
+            <span class="dm-name">Swarnam &ndash; Arnam</span>
+            <span class="dm-sub">The Invisible &amp; The Visible</span>
+          </div>
+          <div class="row g-0">
+            <div class="col-md-6 dm-reality">
+              <span class="dm-rlabel sanskrit">Swarnam</span>
+              <p>The invisible; influences, forces, and realities that operate unseen yet profoundly shape existence &mdash; the effort behind achievement, the principles behind actions.</p>
+            </div>
+            <div class="col-md-6 dm-reality">
+              <span class="dm-rlabel sanskrit">Arnam</span>
+              <p>The visible; manifest outcomes, recognized achievements, and perceivable reality &mdash; what can be seen, measured, and acknowledged.</p>
+            </div>
+          </div>
+          <div class="dm-combined">
+            <i class="fa-solid fa-link dm-combined-icon"></i>
+            <p>Much of what shapes life operates unseen. True understanding requires recognizing both what appears and what remains hidden &mdash; honouring the invisible foundations while bringing rightful visibility to what deserves recognition. Neither can be understood without the other.</p>
+          </div>
         </div>
+
+        <!-- 07 Bhrammam – Nilayam -->
+        <div class="dm-card fade-up" data-testid="dm-pair-bhrammam-nilayam">
+          <div class="dm-header">
+            <span class="dm-num">07</span>
+            <span class="dm-name">Bhrammam &ndash; Nilayam</span>
+            <span class="dm-sub">Creating &amp; Existing Reality</span>
+          </div>
+          <div class="row g-0">
+            <div class="col-md-6 dm-reality">
+              <span class="dm-rlabel sanskrit">Bhrammam</span>
+              <p>Creating reality; long-term creation without attachment; the process of bringing new possibilities into existence; associated with <span class="sanskrit">Eshwara</span>&rsquo;s creative function.</p>
+            </div>
+            <div class="col-md-6 dm-reality">
+              <span class="dm-rlabel sanskrit">Nilayam</span>
+              <p>Existing reality; what has been established and currently stands; the stable ground of what is, requiring maintenance and continued engaged stewardship.</p>
+            </div>
+          </div>
+          <div class="dm-combined">
+            <i class="fa-solid fa-link dm-combined-icon"></i>
+            <p>Progress requires both creation and maintenance. <span class="sanskrit">Bhrammam</span> represents the visionary capacity to imagine and create what does not yet exist, while <span class="sanskrit">Nilayam</span> represents established reality that provides foundation and continuity &mdash; neither is complete without the other.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -583,7 +783,7 @@
   <div class="container">
     <div class="row g-4">
       <div class="col-lg-4 col-md-6"><span class="footer-brand"><img src="../images/logo.png" alt="Nandi" class="footer-nandi-logo"><span class="samarkan-text">Shaivam</span></span><p>A philosophy of freedom, balance, and infinite growth. Ancient wisdom for modern life.</p></div>
-      <div class="col-lg-2 col-md-6"><h6>Navigate</h6><ul><li><a href="../" data-testid="footer-home-link">Home</a></li><li><a href="../about/" data-testid="footer-about-link">About</a></li><li><a href="../temples/" data-testid="footer-temples-link">Temples</a></li><li><a href="../videos/" data-testid="footer-videos-link">Videos</a></li><li><a href="../blog/" data-testid="footer-blog-link">Blog</a></li><li><a href="../contact/" data-testid="footer-contact-link">Contact</a></li></ul></div>
+      <div class="col-lg-2 col-md-6"><h6>Navigate</h6><ul><li><a href="../" data-testid="footer-home-link">Home</a></li><li><a href="../about/" data-testid="footer-about-link">About</a></li><li><a href="../videos/" data-testid="footer-videos-link">Videos</a></li><li><a href="../blog/" data-testid="footer-blog-link">Blog</a></li><li><a href="../contact/" data-testid="footer-contact-link">Contact</a></li></ul></div>
       <div class="col-lg-3 col-md-6"><h6>Philosophy</h6><ul><li><a href="#dual-monism">Dual Monism</a></li><li><a href="#two-domains">The Two Domains</a></li><li><a href="#three-paths">The Three Paths</a></li><li><a href="#deities">Deity Archetypes</a></li></ul></div>
       <div class="col-lg-3 col-md-6"><h6>Wisdom</h6><p class="fst-italic">"Shaivam is the constant pursuit of what we believe"</p></div>
     </div>

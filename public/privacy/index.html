@@ -197,8 +197,9 @@
       <div class="col-lg-3 col-md-6">
         <h6 class="footer-heading">Stay Connected</h6>
         <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:1rem;">Receive reflections and insights on Shaivam philosophy.</p>
-        <form class="newsletter-form d-flex gap-2" data-testid="newsletter-form">
-          <input type="email" class="form-control form-control-sm" placeholder="your@email.com" required style="flex:1;min-width:0;">
+        <form class="d-flex flex-column gap-2" data-testid="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+          <input type="text" class="form-control form-control-sm" placeholder="Your name" style="min-width:0;">
+          <input type="email" class="form-control form-control-sm" placeholder="your@email.com" style="min-width:0;">
           <button type="submit" class="btn-saffron" style="font-size:0.8rem;padding:0.45rem 1rem;white-space:nowrap;" data-testid="newsletter-submit-btn">Subscribe</button>
         </form>
       </div>

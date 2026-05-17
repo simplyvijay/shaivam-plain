@@ -353,7 +353,8 @@
           <h6 style="color:rgba(250,249,246,0.7);">Newsletter</h6>
           <p style="color:rgba(250,249,246,0.8);font-size:0.88rem;line-height:1.6;">Monthly philosophical insights delivered to your inbox.</p>
           <form onsubmit="handleNewsletterSubmit(event)" data-testid="sidebar-newsletter-form">
-            <input type="email" class="form-control mb-2" placeholder="Your email" style="font-size:0.9rem;background:rgba(255,255,255,0.95);border:none;" data-testid="sidebar-email-input" required>
+            <input type="text" class="form-control mb-2" placeholder="Your name" style="font-size:0.9rem;background:rgba(255,255,255,0.95);border:none;" data-testid="sidebar-name-input">
+            <input type="email" class="form-control mb-2" placeholder="Your email" style="font-size:0.9rem;background:rgba(255,255,255,0.95);border:none;" data-testid="sidebar-email-input">
             <button type="submit" class="btn-saffron w-100" data-testid="sidebar-subscribe-btn" style="width:100%;text-align:center;">Subscribe</button>
           </form>
         </div>
@@ -370,7 +371,8 @@
       <h3>Stay Connected</h3>
       <p>Receive monthly insights, new articles, and philosophical reflections from the world of Shaivam.</p>
       <form class="newsletter-form" data-testid="main-newsletter-form" onsubmit="handleNewsletterSubmit(event)">
-        <input type="email" placeholder="Your email address" aria-label="Email" required data-testid="main-newsletter-email">
+        <input type="text" placeholder="Your name" aria-label="Name" data-testid="main-newsletter-name">
+        <input type="email" placeholder="Your email address" aria-label="Email" data-testid="main-newsletter-email">
         <button type="submit" class="btn-saffron" data-testid="main-newsletter-submit">Subscribe</button>
       </form>
     </div>

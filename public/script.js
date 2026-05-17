@@ -155,21 +155,69 @@ function initWisdomQuotes() {
   }
 }
 
-// ===== NEWSLETTER FORM =====
-function handleNewsletterSubmit(e) {
+// ===== NEWSLETTER SUBSCRIBE =====
+async function handleNewsletterSubmit(e) {
   e.preventDefault();
-  const input = e.target.querySelector('input');
-  const btn = e.target.querySelector('button');
-  if (!input.value.trim()) return;
-  btn.textContent = 'Subscribed!';
-  btn.style.backgroundColor = '#27ae60';
-  btn.style.borderColor = '#27ae60';
-  input.value = '';
-  setTimeout(() => {
-    btn.textContent = 'Subscribe';
-    btn.style.backgroundColor = '';
-    btn.style.borderColor = '';
-  }, 3000);
+  const form = e.target;
+  const nameInput  = form.querySelector('input[type="text"], input[name="name"]');
+  const emailInput = form.querySelector('input[type="email"]');
+  const btn        = form.querySelector('button[type="submit"]');
+
+  // Get or create status element
+  let status = form.querySelector('.nl-status');
+  if (!status) {
+    status = document.createElement('div');
+    status.className = 'nl-status';
+    form.appendChild(status);
+  }
+  status.textContent = '';
+  status.className = 'nl-status';
+
+  const name  = nameInput  ? nameInput.value.trim()  : '';
+  const email = emailInput ? emailInput.value.trim() : '';
+
+  // Validation
+  if (!name) {
+    status.textContent = 'Please enter your name.';
+    status.classList.add('nl-error');
+    if (nameInput) nameInput.focus();
+    return;
+  }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    status.textContent = 'Please enter a valid email address.';
+    status.classList.add('nl-error');
+    if (emailInput) emailInput.focus();
+    return;
+  }
+
+  // Show spinner
+  const originalHTML = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin me-1"></i>Subscribing\u2026';
+
+  try {
+    const res = await fetch('https://api.shaivam.info/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email })
+    });
+
+    if (res.status === 202) {
+      status.textContent = 'Thank you! You\'re now subscribed.';
+      status.classList.add('nl-success');
+      if (nameInput)  nameInput.value  = '';
+      if (emailInput) emailInput.value = '';
+    } else {
+      status.textContent = 'Something went wrong. Please try again.';
+      status.classList.add('nl-error');
+    }
+  } catch (_) {
+    status.textContent = 'Unable to reach the server. Please try again.';
+    status.classList.add('nl-error');
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = originalHTML;
 }
 
 // ===== SCROLL ANIMATIONS =====

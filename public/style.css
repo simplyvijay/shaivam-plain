@@ -676,14 +676,90 @@ h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
 .path-card p { color: var(--text-muted); font-size: 0.92rem; }
 
 /* ===== DEITY CARDS ===== */
-.deity-card { background-color: var(--surface-white); border: 0 !important; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-soft); transition: all 0.35s ease; height: 100%; }
-.deity-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
-.deity-header { background: linear-gradient(135deg, var(--neutral-dark) 0%, #3d1c00 100%); padding: 1.75rem; text-align: center; }
-.deity-header .d-icon { font-size: 2.2rem; color: #D4A017; margin-bottom: 0.5rem; }
-.deity-header h5 { color: var(--secondary); font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin: 0; }
-.deity-body { padding: 1.35rem; }
-.deity-role { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary); margin-bottom: 0.5rem; }
-.deity-body p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.65; margin: 0; }
+/* ===== DEITY ARCHETYPE CARDS — image background ===== */
+.deity-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-color: #0c0808;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 340px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.deity-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.45); }
+
+/* bottom-to-top gradient overlay for text legibility */
+.deity-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+    rgba(6,3,1,0.97) 0%,
+    rgba(6,3,1,0.85) 28%,
+    rgba(6,3,1,0.45) 50%,
+    rgba(6,3,1,0.12) 72%,
+    rgba(6,3,1,0.00) 100%);
+  z-index: 1;
+}
+
+/* small icon badge top-right */
+.deity-card-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 34px;
+  height: 34px;
+  background: rgba(211,84,0,0.82);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.8rem;
+  z-index: 2;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* text block pinned to bottom */
+.deity-img-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.2rem 1.4rem 1.4rem;
+  z-index: 2;
+}
+.deity-img-content .deity-role {
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #D4A017;
+  margin-bottom: 0.3rem;
+}
+.deity-img-content h5 {
+  color: #faf9f6;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.28rem;
+  font-weight: 600;
+  margin: 0 0 0.45rem;
+  line-height: 1.2;
+}
+.deity-img-content p {
+  color: rgba(250,249,246,0.75);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: -webkit-line-clamp 0.3s;
+}
+.deity-card:hover .deity-img-content p { -webkit-line-clamp: 5; }
 
 /* ===== NAVAGRAHAM GRID ===== */
 .nava-card { background-color: var(--surface-white); border: 0; border-radius: 8px; padding: 1.25rem 0.75rem; text-align: center; box-shadow: var(--shadow-soft); transition: all 0.3s ease; height: 100%; }

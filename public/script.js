@@ -190,6 +190,9 @@ async function handleNewsletterSubmit(e) {
     return;
   }
 
+  // Guard: prevent double-submit if already in progress
+  if (btn.disabled) return;
+
   // Show spinner
   const originalHTML = btn.innerHTML;
   btn.disabled = true;
@@ -203,21 +206,26 @@ async function handleNewsletterSubmit(e) {
     });
 
     if (res.status === 202) {
+      // Success: stop spinner, keep button disabled, clear inputs
+      btn.innerHTML = 'Subscribed';
       status.textContent = 'Thank you! You\'re now subscribed.';
       status.classList.add('nl-success');
-      if (nameInput)  nameInput.value  = '';
+      if (nameInput)  nameInput.value = '';
       if (emailInput) emailInput.value = '';
     } else {
+      // Server error: stop spinner, re-enable button, show error
+      btn.disabled = false;
+      btn.innerHTML = originalHTML;
       status.textContent = 'Something went wrong. Please try again.';
       status.classList.add('nl-error');
     }
   } catch (_) {
+    // Network error: stop spinner, re-enable button, show error
+    btn.disabled = false;
+    btn.innerHTML = originalHTML;
     status.textContent = 'Unable to reach the server. Please try again.';
     status.classList.add('nl-error');
   }
-
-  btn.disabled = false;
-  btn.innerHTML = originalHTML;
 }
 
 // ===== SCROLL ANIMATIONS =====
@@ -349,8 +357,6 @@ document.addEventListener('DOMContentLoaded', function() {
   initGAC();
   initWisdomQuotes();
   initShareModal();
-
-  document.querySelectorAll('.newsletter-form').forEach(f => f.addEventListener('submit', handleNewsletterSubmit));
 
   // Active nav detection — folder-based URL structure
   // e.g. /shaivam/about/ → 'about',  /shaivam/blog/dual-monism/ → 'blog'
